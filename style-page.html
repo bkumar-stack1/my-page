@@ -5,17 +5,26 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Design Showcase</title>
     <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
 </head>
-<body>
+<body class="light-mode">
     <!-- Navigation -->
     <nav>
-        <a href="#" class="logo">Portfolio</a>
+        <a href="#" class="logo"><i class="fas fa-code"></i> Portfolio</a>
         <ul class="nav-links">
             <li><a href="#home">Home</a></li>
             <li><a href="#features">Features</a></li>
             <li><a href="#portfolio">Portfolio</a></li>
             <li><a href="#contact">Contact</a></li>
         </ul>
+        <div class="nav-controls">
+            <button class="theme-toggle" id="themeToggle" aria-label="Toggle theme">
+                <i class="fas fa-moon"></i>
+            </button>
+            <button class="menu-toggle" id="menuToggle" aria-label="Toggle menu">
+                <i class="fas fa-bars"></i>
+            </button>
+        </div>
     </nav>
 
     <!-- Hero Section -->
@@ -30,83 +39,151 @@
 
     <!-- Features Section -->
     <section class="features" id="features">
-        <div class="feature-card">
+        <div class="feature-card" data-skill="design">
             <div class="feature-icon">🎨</div>
             <h3>Design</h3>
             <img src="images/degine.png" alt="degine photo" sizes="full">
             <p>Beautiful and intuitive user interfaces that captivate and engage your audience</p>
+            <div class="skill-bar">
+                <div class="skill-progress" style="width: 95%"></div>
+            </div>
         </div>
-        <div class="feature-card">
+        <div class="feature-card" data-skill="development">
             <div class="feature-icon">⚙️</div>
             <h3>Development</h3>
             <img src="images/Development.png" alt="Developer">
             <p>Clean, efficient code built with the latest technologies and best practices</p>
+            <div class="skill-bar">
+                <div class="skill-progress" style="width: 98%"></div>
+            </div>
         </div>
-        <div class="feature-card">
+        <div class="feature-card" data-skill="performance">
             <div class="feature-icon">🚀</div>
             <h3>Performance</h3>
             <img src="images/peformance.png" alt="Performance">
             <p>Lightning-fast applications optimized for speed and reliability</p>
+            <div class="skill-bar">
+                <div class="skill-progress" style="width: 92%"></div>
+            </div>
         </div>
     </section>
 
-  
     <section class="portfolio" id="portfolio">
         <h2 class="section-title">Latest Work</h2>
+        <div class="filter-buttons">
+            <button class="filter-btn active" data-filter="all">All</button>
+            <button class="filter-btn" data-filter="web">Web</button>
+            <button class="filter-btn" data-filter="mobile">Mobile</button>
+            <button class="filter-btn" data-filter="brand">Brand</button>
+        </div>
         <div class="portfolio-grid">
-            <div class="portfolio-item">
-                <img src="images/webDesign.png" alt="Web Platform" class="portfolio-img">
+            <div class="portfolio-item" data-category="web">
+                <div class="portfolio-img-wrapper">
+                    <img src="images/webDesign.png" alt="Web Platform" class="portfolio-img">
+                    <div class="portfolio-overlay">
+                        <button class="view-btn" aria-label="View project">View Project</button>
+                    </div>
+                </div>
                 <div class="portfolio-content">
                     <h4>Web Platform</h4>
                     <p>Modern responsive web application with interactive features</p>
+                    <div class="portfolio-tags">
+                        <span class="tag">React</span>
+                        <span class="tag">JavaScript</span>
+                    </div>
                 </div>
             </div>
-            <div class="portfolio-item">
-                <img src="images/MobileApp.png" alt="Mobile App" class="portfolio-img">
+            <div class="portfolio-item" data-category="mobile">
+                <div class="portfolio-img-wrapper">
+                    <img src="images/MobileApp.png" alt="Mobile App" class="portfolio-img">
+                    <div class="portfolio-overlay">
+                        <button class="view-btn" aria-label="View project">View Project</button>
+                    </div>
+                </div>
                 <div class="portfolio-content">
                     <h4>Mobile App</h4>
                     <p>Cross-platform mobile application for iOS and Android</p>
+                    <div class="portfolio-tags">
+                        <span class="tag">React Native</span>
+                        <span class="tag">Swift</span>
+                    </div>
                 </div>
             </div>
-            <div class="portfolio-item">
-                <img src="images/brand.png" alt="Brand Identity" class="portfolio-img">
+            <div class="portfolio-item" data-category="brand">
+                <div class="portfolio-img-wrapper">
+                    <img src="images/brand.png" alt="Brand Identity" class="portfolio-img">
+                    <div class="portfolio-overlay">
+                        <button class="view-btn" aria-label="View project">View Project</button>
+                    </div>
+                </div>
                 <div class="portfolio-content">
                     <h4>Brand Identity</h4>
                     <p>Complete brand design system and visual guidelines</p>
+                    <div class="portfolio-tags">
+                        <span class="tag">Design</span>
+                        <span class="tag">Branding</span>
+                    </div>
                 </div>
             </div>
         </div>
     </section>
 
-   
     <section class="stats">
         <div class="stat">
-            <div class="stat-number">50+</div>
+            <div class="stat-number" data-target="50">0</div>
             <div class="stat-label">Projects</div>
         </div>
         <div class="stat">
-            <div class="stat-number">100+</div>
+            <div class="stat-number" data-target="100">0</div>
             <div class="stat-label">Clients</div>
         </div>
         <div class="stat">
-            <div class="stat-number">8+</div>
+            <div class="stat-number" data-target="8">0</div>
             <div class="stat-label">Years</div>
         </div>
         <div class="stat">
-            <div class="stat-number">99%</div>
+            <div class="stat-number" data-target="99">0</div>
             <div class="stat-label">Satisfaction</div>
         </div>
     </section>
 
-    
-    <footer id="contact">
+    <!-- Contact Section -->
+    <section class="contact-cta" id="contact">
+        <h2>Ready to Collaborate?</h2>
+        <p>Let's create something amazing together</p>
+        <button class="cta-button" id="contactBtn">Get in Touch</button>
+    </section>
+
+    <!-- Contact Modal -->
+    <div class="modal" id="contactModal">
+        <div class="modal-content">
+            <button class="close-btn" id="closeModal">&times;</button>
+            <h2>Send Me a Message</h2>
+            <form class="contact-form" id="contactForm">
+                <div class="form-group">
+                    <input type="text" placeholder="Your Name" required>
+                </div>
+                <div class="form-group">
+                    <input type="email" placeholder="Your Email" required>
+                </div>
+                <div class="form-group">
+                    <textarea placeholder="Your Message" rows="5" required></textarea>
+                </div>
+                <button type="submit" class="form-submit">Send Message</button>
+            </form>
+        </div>
+    </div>
+
+    <footer>
         <div class="social">
-            <a href="github">Github</a>
-            <a href="twitter">Twitter</a>
-            <a href="linkedin">LinkedIn</a>
-            <a href="email">Email</a>
+            <a href="#" aria-label="Github" title="Github"><i class="fab fa-github"></i></a>
+            <a href="#" aria-label="Twitter" title="Twitter"><i class="fab fa-twitter"></i></a>
+            <a href="#" aria-label="LinkedIn" title="LinkedIn"><i class="fab fa-linkedin"></i></a>
+            <a href="#" aria-label="Email" title="Email"><i class="fas fa-envelope"></i></a>
         </div>
         <p>&copy; 2026 Creative Portfolio. Designed with passion and code.</p>
     </footer>
+
+    <script src="script.js"></script>
 </body>
 </html>
