@@ -97,14 +97,18 @@ document.querySelectorAll('.stat-number').forEach(stat => {
 
 // ==================== Contact Modal ====================
 const contactBtn = document.getElementById('contactBtn');
+const contactBtn2 = document.getElementById('contactBtn2');
 const contactModal = document.getElementById('contactModal');
 const closeModal = document.getElementById('closeModal');
 const contactForm = document.getElementById('contactForm');
 
-contactBtn.addEventListener('click', () => {
+const openContactModal = () => {
     contactModal.classList.add('active');
     document.body.style.overflow = 'hidden';
-});
+};
+
+if (contactBtn) contactBtn.addEventListener('click', openContactModal);
+if (contactBtn2) contactBtn2.addEventListener('click', openContactModal);
 
 closeModal.addEventListener('click', () => {
     contactModal.classList.remove('active');
